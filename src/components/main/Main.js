@@ -202,7 +202,7 @@ export default function Main() {
             className="col-md-6 d-flex align-items-center justify-content-center"
             style={{ height: "500px" }}>
             <img
-              src="https://Maharashtra LTD.com/assets/images/uni.webp"
+              src="https://gwayerp.com/assets/images/uni.webp"
               alt=""
               srcSet=""
               width={"80%"}

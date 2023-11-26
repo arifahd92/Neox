@@ -1,38 +1,63 @@
-import React, { useState } from "react";
-import Button from "@mui/material/Button";
+import React, { useState, useRef, useEffect } from "react";
+
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
-function MyModal() {
+function MyModal({ navItem }) {
   const [open, setOpen] = useState(false);
+  const modalRef = useRef(null);
 
   const handleOpen = () => {
     setOpen(true);
   };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
+  useEffect(() => {
+    const handleMouseLeave = (e) => {
+      if (
+        e.clientX < modalRef.current.getBoundingClientRect().left ||
+        e.clientX > modalRef.current.getBoundingClientRect().right ||
+        e.clientY > modalRef.current.getBoundingClientRect().bottom
+      ) {
+        handleClose();
+      }
+    };
+
+    if (open) {
+      document.addEventListener("mousemove", handleMouseLeave);
+    }
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseLeave);
+    };
+  }, [open]);
   const modalStyle = {
     position: "absolute",
-    top: "290px",
+    top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "80vw",
-    height: "auto",
+    height: "80vh",
     backgroundColor: "white",
     padding: "20px",
+    overflow: "auto",
   };
 
   return (
-    <div style={{ position: "relative" }}>
-      <div variant="contained " onClick={handleOpen}>
-        Products
+    <div>
+      <div variant="contained" onMouseOver={handleOpen}>
+        {navItem}
       </div>
       <Modal
         open={open}
         aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description">
-        <Box sx={modalStyle}>
-          <div className="container">
+        aria-describedby="simple-modal-description"
+      >
+        <Box sx={modalStyle} ref={modalRef}>
+          <div className="container ">
             <div className="row">
               <div className="col-md-4 col-sm-6 ">
                 <div class="card ">

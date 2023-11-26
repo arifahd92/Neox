@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import MyModal from "./Mymodal";
-function Mynavbar() {
+function navbargway() {
   return (
     <>
       <Navbar collapseOnSelect expand="lg" className="">
@@ -50,4 +50,4 @@ function Mynavbar() {
   );
 }
 
-export default Mynavbar;
+export default navbargway;
