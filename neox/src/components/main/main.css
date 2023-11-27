@@ -1,0 +1,53 @@
+.count-percent{
+    color: rgb(91, 236, 115);
+}
+.count-award{
+    color:rgb(111, 221, 129)
+    color(srgb rgb(204, 240, 245) rgb(136, 216, 112)
+     rgb(39, 227, 208))
+}
+.plate1{
+    color:rgb(250, 220, 248)
+}
+.plate2{
+    color:rgb(219, 245, 250)
+}
+.plate3{
+    color:rgb(178, 224, 201)
+}
+.tag{
+    font-size: x-large;
+    opacity: 0.5;
+}
+
+.textsUnique{
+    font-size: x-large;
+    opacity: 0.9;
+}
+
+.heroImageContainer{
+
+
+  
+    max-height: 400px;
+}
+.heroImage{
+    display: block;
+    height: 100%;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+ 
+  
+    .produce{
+        display: flex;
+        justify-content: center;
+        color:"red"
+    }
+    .heroImageContainer{
+     height: "50vh";
+
+    }
+
+  }
